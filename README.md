@@ -35,6 +35,6 @@ The function does not send email or reserve calendar appointments. The portfolio
 
 The Website checks workflow runs frontend and handler type checks, request tests, SQL migration/access tests in an isolated PostgreSQL service, and the static build. Its publish job runs only when requested or after `PAGES_DEPLOY_ENABLED=true` is set. It checks function availability before publishing. Enable Pages through repository Settings → Pages → GitHub Actions before the first publication.
 
-The Supabase setup workflow can deploy the namespaced migration and public function once the project administrator configures its protected GitHub Actions secrets. The guide includes the exact steps; private credentials belong in the secret settings.
+The Supabase setup workflow deploys the namespaced migration and public function when backend files change on `main`, or when run manually. It requires the project administrator's protected GitHub Actions secrets. Successful backend setup automatically starts website publication. The guide includes the exact steps; private credentials belong in the secret settings.
 
 Artwork was generated for this brand. Fonts are self-hosted; their licences are in `public/assets/font-licenses/`.

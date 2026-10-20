@@ -1,6 +1,7 @@
 node_modules/
 out/
 .sites-runtime/
+supabase/.temp/
 .env*
 !.env.example
 *.tsbuildinfo

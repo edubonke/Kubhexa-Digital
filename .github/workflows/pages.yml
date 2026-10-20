@@ -3,6 +3,9 @@ name: Website checks and GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: [Set up Kubhexa Supabase]
+    types: [completed]
   workflow_dispatch:
     inputs:
       publish:
@@ -19,6 +22,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -56,7 +60,7 @@ jobs:
         with:
           path: out
   deploy:
-    if: ${{ vars.PAGES_DEPLOY_ENABLED == 'true' || inputs.publish == true }}
+    if: ${{ (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') || vars.PAGES_DEPLOY_ENABLED == 'true' || inputs.publish == true }}
     needs: build
     runs-on: ubuntu-latest
     permissions:

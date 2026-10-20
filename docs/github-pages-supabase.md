@@ -26,7 +26,7 @@ Enter them in GitHub's secret settings. They are deployment credentials and do n
 
 ## 2. Run the prepared Supabase setup
 
-Open [Actions](https://github.com/edubonke/Kubhexa-Digital/actions), choose **Set up Kubhexa Supabase**, and select **Run workflow** on `main`.
+Backend-file changes on `main` start **Set up Kubhexa Supabase** automatically. It can also be started manually from [Actions](https://github.com/edubonke/Kubhexa-Digital/actions) with **Run workflow** on `main`. A successful backend setup automatically starts the website publication workflow.
 
 The workflow links only `dqpxsjeeqoadogoadyts`, applies the committed namespaced migration, sets the exact allowed browser origin, deploys `kubhexa-enquiries`, and checks its preflight response. It uses a pinned Supabase CLI with API-based bundling. No local Docker installation is required. Remote database and function changes require the credentials above; the public project URL alone cannot authorise them.
 
@@ -46,7 +46,7 @@ Deploy from the repository root so the bundler includes `lib/enquiry-validation.
 
 Open [repository Pages settings](https://github.com/edubonke/Kubhexa-Digital/settings/pages). Under **Build and deployment**, set **Source** to **GitHub Actions**.
 
-In [Actions](https://github.com/edubonke/Kubhexa-Digital/actions), choose **Website checks and GitHub Pages**, select **Run workflow**, tick **publish**, and run on `main`. The build must pass and the enquiry function must accept the website origin before publication.
+Successful backend setup starts **Website checks and GitHub Pages** and its publication job automatically. For an independent publication, choose that workflow in [Actions](https://github.com/edubonke/Kubhexa-Digital/actions), select **Run workflow**, tick **publish**, and run on `main`. The build must pass and the enquiry function must accept the website origin before publication.
 
 A successful deployment returns the actual public URL. Until that success is verified, the URL above is a destination rather than a confirmed live site. For future pushes to publish automatically, add the repository Actions **variable** `PAGES_DEPLOY_ENABLED` with value `true`. Without it, pushes run checks and produce a build artifact; publication remains an explicit workflow option.
 
