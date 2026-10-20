@@ -4,6 +4,7 @@ import "@fontsource-variable/inter";
 import "../app/globals.css";
 import "../app/motion.css";
 import "../app/portfolio.css";
+import "../app/packages.css";
 import Home from "../app/page";
 import Privacy from "../app/privacy/page";
 import { MotionProvider } from "../app/components/MotionSystem";

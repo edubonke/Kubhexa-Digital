@@ -37,7 +37,7 @@ const styles = [...css].map(file => `<link rel="stylesheet" href="${escape(confi
 const preference = "try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||sessionStorage.getItem('kubhexa-motion')==='off')document.documentElement.dataset.motion='off';}catch{}";
 for (const page of ["home", "privacy"]) {
   const title = page === "home" ? "Kubhexa Digital | Websites, Apps & Product Design" : "Privacy | Kubhexa Digital";
-  const description = page === "home" ? "Websites and apps built for your next move. Business discovery, UI/UX design and development for growing businesses." : "How Kubhexa Digital uses project enquiry information.";
+  const description = page === "home" ? "Websites and apps built for your next move. Explore customised small-business website packages from R2,990, UI/UX design and custom development." : "How Kubhexa Digital uses project enquiry information.";
   const canonical = config.siteUrl + (page === "privacy" ? "privacy/" : "");
   const directory = page === "home" ? output : path.join(output, "privacy");
   await fs.mkdir(directory, { recursive: true });

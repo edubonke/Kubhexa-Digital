@@ -9,7 +9,7 @@ export function Logo({ symbolOnly = false }: { symbolOnly?: boolean }) {
     {!symbolOnly && <span className="brand-wordmark">kubhexa<span> digital</span></span>}
   </span>;
 }
-const links = [["work","Work"],["services","Services"],["approach","Approach"],["studio","Studio"]];
+const links = [["work","Work"],["services","Services"],["packages","Packages"],["approach","Approach"]];
 export function Navigation({ home = true }: { home?: boolean }) {
   const [open,setOpen]=useState(false);
   const [active,setActive]=useState("");

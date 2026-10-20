@@ -35,7 +35,7 @@ function MotionEngine({enabled}:{enabled:boolean}){
   const animations=new Set<Animation>();
   const cleanups:Array<()=>void>=[];
   let observer:IntersectionObserver|undefined;
-  const targets=document.querySelectorAll<HTMLElement>(".section-intro,.project-card,.process-grid>li,.studio-symbol,.studio-copy,.contact-copy,.enquiry-form,.faq-section>h2,.lab-heading,.lab-stage");
+  const targets=document.querySelectorAll<HTMLElement>(".section-intro,.project-card,.process-grid>li,.studio-symbol,.studio-copy,.contact-copy,.enquiry-form,.faq-section>h2,.lab-heading,.lab-stage,.website-package,.package-industries,.package-estimator");
   if("IntersectionObserver" in window&&typeof Element.prototype.animate==="function"){
    observer=new IntersectionObserver(entries=>{
     for(const entry of entries){
