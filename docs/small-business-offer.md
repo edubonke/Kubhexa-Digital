@@ -4,7 +4,7 @@ Approved conversation offer, added 20 October 2026. Public section: `#packages`.
 
 ## Customer offer
 
-The customer selects a package and industry direction. Kubhexa confirms a suitable template, demo, scope and final quote before taking a deposit. The current site accepts enquiries, not purchases. No payment gateway, ready-made template inventory, automated onboarding portal, or subscription billing has been claimed or implemented.
+The customer explores a live template demo, selects a package and industry direction, then requests a quote. Kubhexa confirms the scope and final quote before taking a deposit. The current site accepts enquiries, not purchases. The six reusable frontend templates now have working sample interactions. Real client payment gateways, provider bookings, automated onboarding and subscription billing remain implementation work scoped per client.
 
 | Package | Once-off fee | Scope | Delivery after complete assets, access and deposit |
 | --- | ---: | --- | --- |
@@ -16,7 +16,7 @@ The customer selects a package and industry direction. Kubhexa confirms a suitab
 
 All packages include supplied brand customisation, responsive layouts, search foundations, launch checks, two consolidated revision rounds and 30 days of defect fixes. One business, one language, an existing template layout. Extra scope must be quoted in advance.
 
-Template families: Services & Trades, Professional Services, Beauty & Wellness, Food & Hospitality, Creative & Portfolio and Retail. These are enquiry directions, not a claim that six ready-made templates already exist. Future demos must be genuinely interactive and accurately labelled before adding purchase controls.
+Template families: Services & Trades, Professional Services, Beauty & Wellness, Food & Hospitality, Creative & Portfolio and Retail. The six demos are Neighbour (Start), Northline (Business), Luma (Bookings), Fieldform (Showcase), Table & Thyme (Showcase) and Morrow (Shop). Each has its own preview page, original identity, sample interactions and a template-specific enquiry handoff. See `docs/templates.md`. Sample brands, service prices, products and transactions are fictional; no external messages, bookings or payments occur inside the demos.
 
 ## Care and extras
 

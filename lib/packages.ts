@@ -1,3 +1,5 @@
+import { findTemplate, type TemplateId } from "./templates";
+
 export const formatRand = (value: number) => `R${value.toLocaleString("en-ZA", { maximumFractionDigits: 0 }).replace(/\s/g, ",")}`;
 
 export const websitePackages = [
@@ -35,7 +37,7 @@ export const addOns = [
   { id: "blog", name: "Blog setup", description: "Includes formatting and publishing 1 supplied article", price: 1500, unit: "" },
 ] as const;
 
-export type EstimateOptions = { packageId: PackageId; careId: CareId; familyId?: FamilyId | ""; extraPages?: number; productBatches?: number; copywriting?: boolean; brandKit?: boolean; blog?: boolean };
+export type EstimateOptions = { packageId: PackageId; careId: CareId; familyId?: FamilyId | ""; templateId?: TemplateId; extraPages?: number; productBatches?: number; copywriting?: boolean; brandKit?: boolean; blog?: boolean };
 const count = (value: number | undefined) => {
   if (value === undefined) return 0;
   if (!Number.isInteger(value) || value < 0 || value > 10) throw new Error("Choose a quantity from 0 to 10.");
@@ -55,6 +57,9 @@ export function estimateWebsite(options: EstimateOptions) {
   if (!supportsCare(plan.id, options.careId)) throw new Error("Choose a care plan suited to this package.");
   const family = templateFamilies.find(family => family.id === options.familyId);
   if (options.familyId && !family) throw new Error("Choose a business type.");
+  const template = findTemplate(options.templateId);
+  if (options.templateId && !template) throw new Error("Choose a known template.");
+  if (template && (template.packageId !== plan.id || (family && template.familyId !== family.id))) throw new Error("Choose a template that matches this package and business type.");
   const extraPages = count(options.extraPages);
   const productBatches = count(options.productBatches);
   if (productBatches && plan.id !== "shop") throw new Error("Extra product uploads are available with Shop.");
@@ -63,16 +68,17 @@ export function estimateWebsite(options: EstimateOptions) {
   const addOnTotal = extras.reduce((sum, item) => sum + item.price, 0);
   const onceOff = plan.price + addOnTotal;
   const monthly = care?.price ?? 0;
-  return { plan, care, family, extras, addOnTotal, onceOff, monthly, firstYearFees: onceOff + monthly * 12 };
+  return { plan, care, family, template, extras, addOnTotal, onceOff, monthly, firstYearFees: onceOff + monthly * 12 };
 }
 
 export function packageEnquiry(options: EstimateOptions) {
   const estimate = estimateWebsite(options);
-  const { plan, care, family, extras, onceOff, monthly, firstYearFees } = estimate;
+  const { plan, care, family, template, extras, onceOff, monthly, firstYearFees } = estimate;
   const summary = [
     "Selected small-business website estimate",
     `Package: Kubhexa ${plan.name} — ${formatRand(plan.price)} once-off`,
     ...(family ? [`Business type: ${family.name}`] : []),
+    ...(template ? [`Template: ${template.name} (${template.id})`] : []),
     `Add-ons: ${extras.length ? extras.map(item => `${item.quantity} × ${item.name} (${formatRand(item.price)})`).join("; ") : "None"}`,
     `Once-off estimate: ${formatRand(onceOff)}`,
     `Care: ${care ? `${care.name} — ${formatRand(monthly)}/month` : "No Kubhexa care plan; arrange hosting separately"}`,
@@ -80,7 +86,7 @@ export function packageEnquiry(options: EstimateOptions) {
     "Estimate excludes domains, third-party fees and VAT if applicable. Scope and final quote to be confirmed before a deposit.",
   ].join("\n");
   const budget = onceOff < 15000 ? "Under R15,000" : onceOff <= 40000 ? "R15,000 to R40,000" : onceOff <= 100000 ? "R40,000 to R100,000" : "R100,000+";
-  return { title: `Kubhexa ${plan.name}`, onceOff, monthly, summary, budget };
+  return { title: `Kubhexa ${plan.name}`, templateName: template?.name ?? "", onceOff, monthly, summary, budget };
 }
 export type PackageEnquiry = ReturnType<typeof packageEnquiry>;
 

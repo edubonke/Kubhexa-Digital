@@ -10,7 +10,7 @@ const inclusions = [
   ["A considered handover", "30 days of fixes for defects in the delivered work, with access and training as included in your package."],
 ];
 const purchaseSteps = [
-  ["Choose your starting point", "Pick a package and business type. We confirm a suitable template and share its demo with your quote."],
+  ["Choose your starting point", "Explore the interactive demos, choose a template and review the package that fits your business."],
   ["Confirm your scope", "Review the inclusions, recurring costs and final quote. A 50% deposit reserves your build slot."],
   ["Share your brand", "Submit your logo, content, images and business details through one onboarding brief."],
   ["Review and refine", "Explore your customised website and use your two included revision rounds."],
