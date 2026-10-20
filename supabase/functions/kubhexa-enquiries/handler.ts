@@ -2,6 +2,9 @@ import { enquirySchema } from "../../../lib/enquiry-validation.ts";
 
 type Dependencies = { env: (name: string) => string | undefined; fetch: typeof fetch };
 const maximumBytes = 20000;
+// The website origin is public configuration, so deployment needs no secret-write permission.
+// An explicit environment override supports another domain; an empty override disables enquiries.
+const defaultAllowedOrigins = "https://edubonke.github.io";
 
 async function limitedJson(request: Request) {
   const length = request.headers.get("content-length");
@@ -35,7 +38,7 @@ function serverKey(env: Dependencies["env"]) {
 
 export function createEnquiryHandler(dependencies: Dependencies) {
   return async function handle(request: Request): Promise<Response> {
-    const allowed = (dependencies.env("KUBHEXA_ALLOWED_ORIGINS") || "").split(",").map(value => value.trim()).filter(Boolean);
+    const allowed = (dependencies.env("KUBHEXA_ALLOWED_ORIGINS") ?? defaultAllowedOrigins).split(",").map(value => value.trim()).filter(Boolean);
     const origin = request.headers.get("origin");
     const originAllowed = Boolean(origin && allowed.includes(origin));
     const headers: Record<string, string> = { "Cache-Control": "no-store", "Vary": "Origin", "X-Content-Type-Options": "nosniff" };

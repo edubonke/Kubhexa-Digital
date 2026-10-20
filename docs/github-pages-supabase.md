@@ -28,11 +28,11 @@ Enter them in GitHub's secret settings. They are deployment credentials and do n
 
 Backend-file changes on `main` start **Set up Kubhexa Supabase** automatically. It can also be started manually from [Actions](https://github.com/edubonke/Kubhexa-Digital/actions) with **Run workflow** on `main`. A successful backend setup automatically starts the website publication workflow.
 
-The workflow links only `dqpxsjeeqoadogoadyts`, applies the committed namespaced migration, sets the exact allowed browser origin, deploys `kubhexa-enquiries`, and checks its preflight response. It uses a pinned Supabase CLI with API-based bundling. No local Docker installation is required. Remote database and function changes require the credentials above; the public project URL alone cannot authorise them.
+The workflow links only `dqpxsjeeqoadogoadyts`, applies the committed namespaced migration, deploys `kubhexa-enquiries`, and checks its preflight response. The function includes the exact public browser origin in its source; configuring that public value requires no Edge Function Secrets write permission. It uses a pinned Supabase CLI with API-based bundling. No local Docker installation is required. Remote database and function changes require the credentials above; the public project URL alone cannot authorise them.
 
 The migration creates `public.kubhexa_enquiries`, its index, and `public.kubhexa_submit_enquiry(jsonb)`. It enables RLS, removes anonymous and generic authenticated table/RPC access, and permits server-mediated submission. It does not change another application's tables or authentication policies. The CLI checks migration history before applying changes; reconcile any existing history if this project is already shared with another application.
 
-For manual setup, apply `supabase/migrations/20261020020000_kubhexa_enquiries.sql` in the project's SQL editor, set `KUBHEXA_ALLOWED_ORIGINS=https://edubonke.github.io` under Edge Function Secrets, and deploy the function from the repository root:
+For manual setup, apply `supabase/migrations/20261020020000_kubhexa_enquiries.sql` in the project's SQL editor and deploy the function from the repository root:
 
 ```sh
 supabase login
@@ -74,7 +74,7 @@ pnpm preview
 
 The GitHub checks also apply the migration and rollback-only SQL tests to an isolated PostgreSQL service. Synthetic tests cover RLS and role privileges, storage, identical retries, conflicts, consent, and the hourly quota. Node tests cover invalid input, body limits, allowed/disallowed origins, storage errors and receipt correctness. They do not replace real-project verification after deployment.
 
-For a different domain or repository, update `site.config.json` and the allowed origin in the Supabase workflow. Optional environment overrides are `KUBHEXA_SUPABASE_URL`, `PAGES_SITE_URL`, `PAGES_BASE_PATH`, and `PAGES_ALLOW_INDEXING`. A production-local env file is ignored. Inconsistent URL/path settings fail the build. Set `allowIndexing` to `true` in the config when the website is ready for search indexing.
+For a different domain or repository, update `site.config.json` and `defaultAllowedOrigins` in `supabase/functions/kubhexa-enquiries/handler.ts`. The origin test detects drift between those settings. An optional `KUBHEXA_ALLOWED_ORIGINS` function environment override accepts a comma-separated list; an explicitly empty value disables enquiries. Optional build environment overrides are `KUBHEXA_SUPABASE_URL`, `PAGES_SITE_URL`, `PAGES_BASE_PATH`, and `PAGES_ALLOW_INDEXING`. A production-local env file is ignored. Inconsistent URL/path settings fail the build. Set `allowIndexing` to `true` in the config when the website is ready for search indexing.
 
 ## Enquiry handling
 

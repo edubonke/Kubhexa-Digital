@@ -55,6 +55,26 @@ test("allowed preflight succeeds without database access", async () => {
   assert.equal(calls.length, 0);
 });
 
+test("the deployed website origin works without a configuration secret and rejects other origins", async () => {
+  const settings = JSON.parse(await fs.readFile(new URL("../site.config.json", import.meta.url), "utf8"));
+  const websiteOrigin = new URL(settings.siteUrl).origin;
+  const { handler, calls } = setup({ KUBHEXA_ALLOWED_ORIGINS: undefined });
+  const preflight = await handler(request(undefined, { Origin: websiteOrigin }, "OPTIONS"));
+  assert.equal(preflight.status, 204);
+  assert.equal(preflight.headers.get("Access-Control-Allow-Origin"), websiteOrigin);
+  for (const other of [origin, "https://unrelated.example", `${websiteOrigin}.unrelated.example`]) {
+    const response = await handler(request(fixture(), { Origin: other }));
+    assert.equal(response.status, 403);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), null);
+  }
+  assert.equal(calls.length, 0);
+  const value = fixture();
+  const saved = await handler(request(value, { Origin: websiteOrigin }));
+  assert.equal(saved.status, 201);
+  assert.deepEqual(await saved.json(), { received: true, reference: value.id });
+  assert.equal(calls.length, 1);
+});
+
 test("unknown and missing origins are rejected without reading or writing enquiries", async () => {
   const { handler, calls } = setup();
   const wrong = await handler(request(fixture(), { Origin: "https://unrelated.example" }));

@@ -23,7 +23,6 @@ jobs:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
       SUPABASE_PROJECT_REF: dqpxsjeeqoadogoadyts
-      KUBHEXA_ALLOWED_ORIGINS: https://edubonke.github.io
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
@@ -39,8 +38,6 @@ jobs:
         run: npx --yes supabase@2.121.0 link --project-ref "$SUPABASE_PROJECT_REF" --yes
       - name: Apply the namespaced enquiry migration
         run: npx --yes supabase@2.121.0 db push --linked --yes
-      - name: Allow the GitHub Pages browser origin
-        run: npx --yes supabase@2.121.0 secrets set KUBHEXA_ALLOWED_ORIGINS="$KUBHEXA_ALLOWED_ORIGINS" --project-ref "$SUPABASE_PROJECT_REF"
       - name: Deploy the public enquiry function
         run: npx --yes supabase@2.121.0 functions deploy kubhexa-enquiries --project-ref "$SUPABASE_PROJECT_REF" --use-api
       - name: Check the deployed function's browser-origin response
