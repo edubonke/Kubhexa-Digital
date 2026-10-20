@@ -1,0 +1,6 @@
+project_id = "kubhexa-digital"
+
+# This is a public lead-submission endpoint. It never exposes saved enquiries.
+# Browser origins, request validation and rate limits are enforced by its handler.
+[functions.kubhexa-enquiries]
+verify_jwt = false

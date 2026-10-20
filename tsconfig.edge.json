@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true
+  },
+  "include": [
+    "supabase/functions/kubhexa-enquiries/handler.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
