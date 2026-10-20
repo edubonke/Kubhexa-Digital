@@ -9,6 +9,7 @@ export function WebsitePackages() {
   const [options, setOptions] = useState<EstimateOptions>({ packageId: "business", careId: "none" });
   const [recommendation, setRecommendation] = useState("");
   const choose = (packageId: PackageId) => {
+    setRecommendation("");
     setOptions(previous => ({ ...previous, packageId, productBatches: packageId === "shop" ? previous.productBatches : 0, careId: supportsCare(packageId, previous.careId) ? previous.careId : "none" }));
     requestAnimationFrame(() => { document.getElementById("website-estimate")?.scrollIntoView({ block: "start" }); document.getElementById("estimate-title")?.focus({ preventScroll: true }); });
   };
@@ -27,7 +28,7 @@ export function WebsitePackages() {
       setOptions(previous => ({ ...previous, familyId: family.id, packageId, productBatches: packageId === "shop" ? previous.productBatches : 0, careId: supportsCare(packageId, previous.careId) ? previous.careId : "none" }));
       setRecommendation(`${family.name}: ${websitePackages.find(plan => plan.id === packageId)!.name} selected in your estimate.`);
     }}><strong>{family.name}<ArrowRight size={16}/></strong><span>{family.examples}</span></button>)}</div><p className="package-family-status" role="status">{recommendation || "Each package is tailored to an agreed scope. Specialist systems are quoted separately."}</p></div></div>
-    <PackageEstimator options={options} onChange={setOptions}/>
+    <PackageEstimator options={options} onChange={value => { setOptions(value); setRecommendation(""); }}/>
     <PackageDetails/>
   </section>;
 }
