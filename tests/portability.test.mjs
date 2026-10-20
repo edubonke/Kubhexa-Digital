@@ -12,6 +12,12 @@ await require("esbuild").build({
   outfile: new URL("../.sites-runtime/test/enquiry-handler.cjs", import.meta.url).pathname,
 });
 const { createEnquiryHandler } = require("../.sites-runtime/test/enquiry-handler.cjs");
+await require("esbuild").build({
+  entryPoints: [new URL("../lib/portfolio.ts", import.meta.url).pathname],
+  bundle: true, platform: "node", format: "cjs", logLevel: "silent",
+  outfile: new URL("../.sites-runtime/test/portfolio.cjs", import.meta.url).pathname,
+});
+const { previewSandbox } = require("../.sites-runtime/test/portfolio.cjs");
 const origin = "https://studio-test.github.io";
 const fixture = () => ({ id: crypto.randomUUID(), name: "Example Founder", email: "FOUNDER@example.com", company: "Example Studio", projectType: "Website", budget: "R15,000 to R40,000", timeline: "Within 1 to 3 months", brief: "A focused business website with a useful customer enquiry journey.", consent: true, website: "" });
 function setup(overrides = {}, upstream) {
@@ -36,6 +42,19 @@ test("repository and root deployments produce the correct public paths", () => {
   assert.equal(repo.basePath, "/kubhexa-digital/");
   assert.equal(repo.enquiryEndpoint, "https://project-test.supabase.co/functions/v1/kubhexa-enquiries");
   assert.equal(repo.allowIndexing, false);
+});
+
+test("interactive previews preserve parent isolation while cross-origin sites can use their own storage", () => {
+  const parent = "https://edubonke.github.io";
+  const sameHost = previewSandbox(`${parent}/EduBonke/demo/`, parent).split(" ");
+  assert.ok(sameHost.includes("allow-scripts"));
+  assert.ok(!sameHost.includes("allow-same-origin"));
+  assert.ok(!sameHost.includes("allow-top-navigation"));
+  const otherHost = previewSandbox("https://h9b4y8mf87-bit.github.io/Shift-Start-IT-Support-assistent/", parent).split(" ");
+  assert.ok(otherHost.includes("allow-same-origin"));
+  assert.ok(!otherHost.includes("allow-top-navigation"));
+  assert.ok(!previewSandbox(`${parent}/EduBonke/demo/`, "").split(" ").includes("allow-same-origin"));
+  assert.throws(() => previewSandbox("http://example.com/", parent), /HTTPS/);
 });
 
 test("a Pages production build fails early without a real configuration", () => {

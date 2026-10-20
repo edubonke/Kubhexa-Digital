@@ -4,6 +4,15 @@ export type PortfolioProject = {
   introduction: string; description: string; scope: readonly string[]; note: string;
 };
 
+export function previewSandbox(previewUrl: string, parentOrigin: string) {
+  const preview = new URL(previewUrl);
+  if (preview.protocol !== "https:") throw new Error("Project previews require HTTPS.");
+  const permissions = "allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox";
+  // Cross-origin projects may use their own browser storage. Same-host projects
+  // retain an opaque origin so scripts cannot reach the portfolio document.
+  return parentOrigin && preview.origin !== parentOrigin ? `${permissions} allow-same-origin` : permissions;
+}
+
 export const portfolioProjects: readonly PortfolioProject[] = [
   {
     id: "edubonke", name: "EduBonke", category: "Education platform", status: "Product prototype",

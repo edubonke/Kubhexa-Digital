@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { ExternalLink, Monitor, RotateCcw, Smartphone } from "lucide-react";
 import type { PortfolioProject } from "../../lib/portfolio";
+import { previewSandbox } from "../../lib/portfolio";
 import { sitePath } from "../../lib/site-runtime";
 
 export function WebsitePreview({ project }: { project: PortfolioProject }) {
@@ -44,7 +45,7 @@ export function WebsitePreview({ project }: { project: PortfolioProject }) {
     <div className="website-preview-stage" ref={stageRef} data-device={device}>
       {state !== "error" && <div className="website-frame-canvas" style={frameStyle}>
         <iframe key={attempt} title={`${project.name} interactive preview`} src={project.previewUrl}
-          sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+          sandbox={previewSandbox(project.previewUrl, typeof window === "undefined" ? "" : window.location.origin)}
           allow="camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'"
           referrerPolicy="no-referrer" onLoad={() => setState("loaded")} onError={() => setState("error")} />
       </div>}
