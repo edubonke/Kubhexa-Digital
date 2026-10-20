@@ -60,7 +60,7 @@ jobs:
         with:
           path: out
   deploy:
-    if: ${{ (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') || vars.PAGES_DEPLOY_ENABLED == 'true' || inputs.publish == true }}
+    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') || vars.PAGES_DEPLOY_ENABLED == 'true' || inputs.publish == true }}
     needs: build
     runs-on: ubuntu-latest
     permissions:

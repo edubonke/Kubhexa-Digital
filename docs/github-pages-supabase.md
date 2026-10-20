@@ -48,7 +48,7 @@ Open [repository Pages settings](https://github.com/edubonke/Kubhexa-Digital/set
 
 Successful backend setup starts **Website checks and GitHub Pages** and its publication job automatically. For an independent publication, choose that workflow in [Actions](https://github.com/edubonke/Kubhexa-Digital/actions), select **Run workflow**, tick **publish**, and run on `main`. The build must pass and the enquiry function must accept the website origin before publication.
 
-A successful deployment returns the actual public URL. Until that success is verified, the URL above is a destination rather than a confirmed live site. For future pushes to publish automatically, add the repository Actions **variable** `PAGES_DEPLOY_ENABLED` with value `true`. Without it, pushes run checks and produce a build artifact; publication remains an explicit workflow option.
+A successful deployment returns the actual public URL. Until that success is verified, the URL above is a destination rather than a confirmed live site. Pushes to `main` now publish automatically after the checks and live enquiry preflight pass. A manual workflow run can still use the **publish** option.
 
 ## 4. Verify the first live enquiry
 
