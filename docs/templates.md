@@ -19,6 +19,8 @@ Homepage/catalogue cards use an original code-native illustration and miniature 
 
 The iframe retains the existing parent-isolation sandbox. Same-host demos have an opaque origin and cannot reach parent DOM or storage. All demo interactions use page memory. No backend, storage, account or payment integration is mounted by these demo components. Real Kubhexa enquiries remain on the homepage, outside the sandbox. Demo forms are disabled until hydration and prevent native submission; inputs are checked locally, then display an explicit simulation confirmation.
 
+The iframe source starts after hydration, with its load handler already attached. This prevents a fast or cached prerendered demo from opening before the handler is ready and leaving a false loading notice. The standalone demo link remains available without JavaScript.
+
 ## Content and design
 
 All six businesses, service prices, menu items, products and project stories are fictional. No invented testimonials, certifications or measured client outcomes are included. `TemplateArt.tsx` contains original SVG compositions used in both cards and demos. The sample product and menu art are illustrations, not photographs. Each identity has its own colour tokens, layout, type treatment and content in `template-demos.css`; shared interface patterns are kept accessible and responsive.

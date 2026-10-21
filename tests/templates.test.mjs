@@ -74,6 +74,7 @@ test("every demo and preview prerenders at the correct nested Pages path", () =>
   for (const template of templateCatalog) {
     const preview = renderPage("template", template.id);
     assert.equal((preview.match(/<iframe/g) || []).length, 1);
+    assert.doesNotMatch(preview, /<iframe[^>]*\ssrc=/, "The frame must start after hydration so cached demo loads are observed");
     assert.ok(preview.includes(`https://studio-test.github.io/Kubhexa-Digital/templates/${template.id}/preview/`));
     assert.ok(preview.includes(`?template=${template.id}#contact`));
     const demo = renderPage("demo", template.id);

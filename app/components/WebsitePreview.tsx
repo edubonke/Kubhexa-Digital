@@ -10,10 +10,13 @@ type PreviewDevice = "desktop" | "laptop" | "tablet" | "mobile" | "compact";
 export function WebsitePreview({ project, responsiveTools = false }: { project: PreviewTarget; responsiveTools?: boolean }) {
   const [device, setDevice] = useState<PreviewDevice>("desktop");
   const [attempt, setAttempt] = useState(0);
+  const [frameReady, setFrameReady] = useState(false);
   const [state, setState] = useState<"loading" | "loaded" | "slow" | "error">("loading");
   const [bounds, setBounds] = useState({ width: 1120, height: 560 });
   const stageRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    // Start the iframe after hydration so its load event cannot be missed.
+    setFrameReady(true);
     if (window.matchMedia("(max-width: 760px)").matches) setDevice("mobile");
     const stage = stageRef.current;
     if (!stage) return;
@@ -22,10 +25,10 @@ export function WebsitePreview({ project, responsiveTools = false }: { project: 
     return () => observer.disconnect();
   }, []);
   useEffect(() => {
-    setState("loading");
+    if (!frameReady) return;
     const timer = window.setTimeout(() => setState(value => value === "loading" ? "slow" : value), 15000);
     return () => window.clearTimeout(timer);
-  }, [attempt]);
+  }, [attempt, frameReady]);
 
   const width = device === "mobile" ? 390 : device === "compact" ? 320 : device === "tablet" ? 768 : device === "laptop" ? 1024 : responsiveTools ? 1440 : 1280;
   const scale = Math.min(1, Math.max(bounds.width, 1) / width);
@@ -47,10 +50,10 @@ export function WebsitePreview({ project, responsiveTools = false }: { project: 
     <div className="website-browser-bar"><span aria-hidden="true" className="website-browser-dots"><i /><i /><i /></span><span>{new URL(project.previewUrl).hostname}{new URL(project.previewUrl).pathname}</span></div>
     <div className="website-preview-stage" ref={stageRef} data-device={device}>
       {state !== "error" && <div className="website-frame-canvas" style={frameStyle}>
-        <iframe key={attempt} title={`${project.name} interactive preview`} src={project.previewUrl}
+        <iframe key={frameReady ? attempt : "pending"} title={`${project.name} interactive preview`} src={frameReady ? project.previewUrl : undefined}
           sandbox={previewSandbox(project.previewUrl, typeof window === "undefined" ? "" : window.location.origin)}
           allow="camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'"
-          referrerPolicy="no-referrer" onLoad={() => setState("loaded")} onError={() => setState("error")} />
+          referrerPolicy="no-referrer" onLoad={() => { if (frameReady) setState("loaded"); }} onError={() => { if (frameReady) setState("error"); }} />
       </div>}
       {state === "loading" && <div className="website-loading" role="status">{project.image && <img src={sitePath(project.image)} alt="" />}<div><span className="website-loading-line" /><p>Opening {project.name}…</p></div></div>}
       {(state === "slow" || state === "error") && <div className={`website-load-notice ${state === "error" ? "is-error" : ""}`} role="status"><p>{state === "error" ? "This preview could not be opened." : "Taking a little longer to open."}</p><a href={project.previewUrl} target="_blank" rel="noopener noreferrer">Explore in a new tab <ExternalLink size={15} /></a></div>}
