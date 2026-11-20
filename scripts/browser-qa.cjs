@@ -48,9 +48,13 @@ async function main() {
           await p.locator(section).scrollIntoViewIfNeeded();
           await p.screenshot({path:path.join(output,`${section.slice(1)}-desktop.png`)});
         }
-        for(const project of ['EduBonke','ShiftStart','Alphasonic International']) {
+        assert.equal(await p.locator('.portfolio-project').count(),4);
+        assert.equal(await p.locator('.studio-facts article').filter({hasText:'Selected projects'}).locator('strong').innerText(),'4');
+        for(const project of ['EduBonke','ShiftStart','Alphasonic International','Auntie & Uncle']) {
           await p.getByRole('button',{name:`Explore ${project}`,exact:true}).first().click();
           await p.locator('.portfolio-modal[open]').waitFor();
+          if(project==='ShiftStart') assert.equal(await p.locator('.portfolio-modal iframe').getAttribute('src'),'https://edubonke.github.io/Shift-Start/');
+          if(project==='Auntie & Uncle') assert.equal(await p.locator('.portfolio-modal iframe').getAttribute('src'),'https://edubonke.github.io/Auntie-Uncle-V2/');
           await p.getByRole('button',{name:'Expand preview'}).click();
           await p.locator('.portfolio-modal.is-expanded').waitFor();
           await p.getByRole('button',{name:'Restore preview size'}).click();

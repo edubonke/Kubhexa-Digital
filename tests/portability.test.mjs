@@ -17,7 +17,7 @@ await require("esbuild").build({
   bundle: true, platform: "node", format: "cjs", logLevel: "silent",
   outfile: new URL("../.sites-runtime/test/portfolio.cjs", import.meta.url).pathname,
 });
-const { previewSandbox } = require("../.sites-runtime/test/portfolio.cjs");
+const { previewSandbox, portfolioProjects } = require("../.sites-runtime/test/portfolio.cjs");
 const origin = "https://studio-test.github.io";
 const fixture = () => ({ id: crypto.randomUUID(), name: "Example Founder", email: "FOUNDER@example.com", company: "Example Studio", projectType: "Website", budget: "R15,000 to R40,000", timeline: "Within 1 to 3 months", brief: "A focused business website with a useful customer enquiry journey.", consent: true, website: "" });
 function setup(overrides = {}, upstream) {
@@ -55,6 +55,19 @@ test("interactive previews preserve parent isolation while cross-origin sites ca
   assert.ok(!otherHost.includes("allow-top-navigation"));
   assert.ok(!previewSandbox(`${parent}/EduBonke/demo/`, "").split(" ").includes("allow-same-origin"));
   assert.throws(() => previewSandbox("http://example.com/", parent), /HTTPS/);
+});
+
+test("portfolio projects link to the current public releases and ship their own preview images", async () => {
+  assert.deepEqual(portfolioProjects.map(project => project.id), ["edubonke", "shiftstart", "alphasonic", "auntie-uncle"]);
+  assert.equal(portfolioProjects.find(project => project.id === "shiftstart").previewUrl, "https://edubonke.github.io/Shift-Start/");
+  const auntie = portfolioProjects.find(project => project.id === "auntie-uncle");
+  assert.equal(auntie.previewUrl, "https://edubonke.github.io/Auntie-Uncle-V2/");
+  assert.match(auntie.status, /prototype/i);
+  for (const project of portfolioProjects) {
+    assert.equal(new URL(project.websiteUrl).protocol, "https:");
+    assert.equal(new URL(project.previewUrl).protocol, "https:");
+    assert.ok((await fs.stat(new URL(`../public${project.image}`, import.meta.url))).size > 0);
+  }
 });
 
 test("a Pages production build fails early without a real configuration", () => {
