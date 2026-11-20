@@ -35,6 +35,16 @@ async function main() {
       await p.goto(base,{waitUntil:'networkidle'});
       await p.evaluate(()=>document.fonts.ready);
       assert.equal(await p.locator('h1').count(),1);
+      const headline = await p.locator('.hero h1').evaluate(el=>{
+        const style=getComputedStyle(el);
+        const canvas=document.createElement('canvas').getContext('2d');
+        canvas.font=`${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+        const before=canvas.measureText('apps.');
+        const after=canvas.measureText('Built for your');
+        return {lineHeight:parseFloat(style.lineHeight),fontSize:parseFloat(style.fontSize),inkHeight:before.actualBoundingBoxDescent+after.actualBoundingBoxAscent};
+      });
+      assert(headline.lineHeight>=headline.fontSize*1.09,`Tight hero line spacing at ${width}: ${JSON.stringify(headline)}`);
+      assert(headline.lineHeight-headline.inkHeight>=4,`Overlapping hero glyphs at ${width}: ${JSON.stringify(headline)}`);
       assert.equal(await p.locator('.hero-art img').evaluate(img=>img.complete&&img.naturalWidth>0),true);
       const dimensions = await p.evaluate(()=>({viewport:innerWidth,document:document.documentElement.scrollWidth,theme:getComputedStyle(document.querySelector('#site-root')).backgroundColor,hero:document.querySelector('.hero').getBoundingClientRect().height}));
       assert(dimensions.document<=width+1,`Horizontal overflow at ${width}: ${JSON.stringify(dimensions)}`);
