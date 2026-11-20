@@ -8,6 +8,7 @@ import { ExperienceLab } from "./components/ExperienceLab";
 import { WebsitePackages } from "./components/WebsitePackages";
 import { MotionToggle } from "./components/MotionSystem";
 import { sitePath } from "../lib/site-runtime";
+import { portfolioProjects } from "../lib/portfolio";
 const steps = [
  { title: "Understand", copy: "Your goals, your customers, and where the current experience gets in the way." },
  { title: "Shape", copy: "A clear first release and a prototype you can explore before we start building." },
@@ -18,7 +19,7 @@ const studioFacts = [
  { value: "R2,990", label: "Websites from", detail: "Transparent small-business launch pricing" },
  { value: "5", label: "Website packages", detail: "From Start to a complete online shop" },
  { value: "3–5 days", label: "Start package delivery", detail: "Working days after content, access and deposit" },
- { value: "3", label: "Selected projects", detail: "Explore our digital platforms and websites" },
+ { value: String(portfolioProjects.length), label: "Selected projects", detail: "Explore our digital platforms and websites" },
 ];
 export default function Home() {
  return <>
