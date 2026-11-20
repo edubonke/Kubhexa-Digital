@@ -7,6 +7,7 @@ import "../app/portfolio.css";
 import "../app/packages.css";
 import "../app/templates.css";
 import "../app/template-demos.css";
+import "../app/cobalt.css";
 import Home from "../app/page";
 import Privacy from "../app/privacy/page";
 import { MotionProvider } from "../app/components/MotionSystem";

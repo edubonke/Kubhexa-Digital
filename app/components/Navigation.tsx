@@ -9,14 +9,14 @@ export function Logo({ symbolOnly = false }: { symbolOnly?: boolean }) {
     {!symbolOnly && <span className="brand-wordmark">kubhexa<span> digital</span></span>}
   </span>;
 }
-const links = [["work","Work"],["services","Services"],["packages","Packages"],["templates","Templates"]];
+const links = [["work","Work"],["services","Services"],["packages","Packages"],["templates","Templates"],["concepts","Concepts"],["approach","Process"]];
 export function Navigation({ home = true }: { home?: boolean }) {
   const [open,setOpen]=useState(false);
   const [active,setActive]=useState("");
   const [mobile,setMobile]=useState(false);
   const buttonRef=useRef<HTMLButtonElement>(null);
   const prefix=home ? "" : sitePath("/");
-  useEffect(()=>{const media=window.matchMedia("(max-width: 760px)");const sync=()=>{setMobile(media.matches);if(!media.matches)setOpen(false);};sync();media.addEventListener("change",sync);return()=>media.removeEventListener("change",sync);},[]);
+  useEffect(()=>{const media=window.matchMedia("(max-width: 1000px)");const sync=()=>{setMobile(media.matches);if(!media.matches)setOpen(false);};sync();media.addEventListener("change",sync);return()=>media.removeEventListener("change",sync);},[]);
   useEffect(()=>{
     if (!home) return;
     const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)setActive(entry.target.id);},{rootMargin:"-18% 0px -60% 0px",threshold:0});

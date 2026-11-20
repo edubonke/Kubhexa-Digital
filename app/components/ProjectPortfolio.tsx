@@ -33,9 +33,9 @@ export function ProjectPortfolio() {
           <img src={sitePath(item.image)} alt={item.imageAlt} width={1100} height={756} loading="lazy" />
           <span className="portfolio-image-action">Explore project <ArrowUpRight size={17} /></span>
         </button>
-        <div className="portfolio-project-meta"><span>0{index + 1} / {item.category}</span><span>{item.status}</span></div>
+        <div className="portfolio-project-copy"><div className="portfolio-project-meta"><span>0{index + 1} / {item.category}</span><span>{item.status}</span></div>
         <h3>{item.name}</h3><p>{item.introduction}</p>
-        <button type="button" className="text-link" aria-haspopup="dialog" onClick={event => { openerRef.current = event.currentTarget; setActive(item.id); }}>Explore {item.name} <ArrowRight size={17} /></button>
+        <button type="button" className="text-link" aria-haspopup="dialog" onClick={event => { openerRef.current = event.currentTarget; setActive(item.id); }}>Explore {item.name} <ArrowRight size={17} /></button></div>
       </article>)}
     </div>
     <dialog ref={dialogRef} className={`case-modal portfolio-modal ${expanded ? "is-expanded" : ""}`} aria-labelledby="portfolio-preview-title" onCancel={event => { event.preventDefault(); close(); }} onClick={event => { if (event.target === event.currentTarget) close(); }}>
