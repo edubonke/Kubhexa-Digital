@@ -9,6 +9,7 @@ import "../app/templates.css";
 import "../app/template-demos.css";
 import "../app/cobalt.css";
 import "../app/seo.css";
+import "../app/analytics.css";
 import Home from "../app/page";
 import Privacy from "../app/privacy/page";
 import { MotionProvider } from "../app/components/MotionSystem";
