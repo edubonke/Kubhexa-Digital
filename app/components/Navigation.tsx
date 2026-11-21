@@ -9,7 +9,7 @@ export function Logo({ symbolOnly = false }: { symbolOnly?: boolean }) {
     {!symbolOnly && <span className="brand-wordmark">kubhexa<span> digital</span></span>}
   </span>;
 }
-const links = [["work","Work"],["services","Services"],["packages","Packages"],["templates","Templates"],["concepts","Concepts"],["approach","Process"]];
+const links = [["work","Work","/work/"],["services","Services","/services/website-design/"],["packages","Packages","/packages/"],["templates","Templates","/templates/"],["concepts","Concepts",""],["approach","Process",""]];
 export function Navigation({ home = true }: { home?: boolean }) {
   const [open,setOpen]=useState(false);
   const [active,setActive]=useState("");
@@ -26,7 +26,7 @@ export function Navigation({ home = true }: { home?: boolean }) {
   useEffect(()=>{const handle=(event:KeyboardEvent)=>{if(event.key==="Escape"&&open){setOpen(false);buttonRef.current?.focus();}};document.addEventListener("keydown",handle);return()=>document.removeEventListener("keydown",handle);},[open]);
   return <header className="site-header"><div className="container nav-inner">
     <a className="brand-home" href={home ? "#main" : sitePath("/")} aria-label="Kubhexa Digital home"><Logo /></a>
-    <nav id="primary-navigation" className={`main-nav ${open?"is-open":""}`} aria-label="Main navigation" aria-hidden={mobile&&!open?true:undefined} inert={mobile&&!open?true:undefined}>{links.map(([id,label])=><a key={id} href={`${prefix}#${id}`} aria-current={active===id?"location":undefined} onClick={()=>setOpen(false)}>{label}</a>)}<a className="button mobile-contact" href={`${prefix}#contact`} onClick={()=>setOpen(false)}>Start a project <ArrowRight size={18}/></a></nav>
+    <nav id="primary-navigation" className={`main-nav ${open?"is-open":""}`} aria-label="Main navigation" aria-hidden={mobile&&!open?true:undefined} inert={mobile&&!open?true:undefined}>{links.map(([id,label,path])=><a key={id} href={path?sitePath(path):`${prefix}#${id}`} aria-current={active===id?"location":undefined} onClick={()=>setOpen(false)}>{label}</a>)}<a className="button mobile-contact" href={`${prefix}#contact`} onClick={()=>setOpen(false)}>Start a project <ArrowRight size={18}/></a></nav>
     <a className="button nav-contact" href={`${prefix}#contact`}>Start a project <ArrowRight size={18}/></a>
     <button className="menu-button" type="button" ref={buttonRef} aria-label={open?"Close navigation":"Open navigation"} aria-controls="primary-navigation" aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button>
   </div></header>;

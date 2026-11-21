@@ -37,6 +37,8 @@ export function EnquiryForm(){
    if(!response.ok){if(response.status===409)requestId.current="";if(result.fields)showErrors(result.fields);setMessage(result.error||"We could not confirm your enquiry. Please try again.");return;}
    if(!result.received||result.reference!==submission.id)throw new Error("No matching receipt");
    setReceipt({...submission,reference:result.reference});requestId.current="";
+   // Emit an anonymous conversion only after the backend confirms storage.
+   window.dispatchEvent(new CustomEvent("kubhexa:generate_lead"));
   }catch{setMessage("We could not confirm that your enquiry was saved. Please check your connection and try again. Your details are still here.");}
   finally{setSending(false);}
  }
