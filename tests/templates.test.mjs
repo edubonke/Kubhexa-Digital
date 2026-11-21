@@ -16,6 +16,18 @@ const { demoCartTotal } = require(new URL("template-data.cjs", runtime).pathname
 await require("esbuild").build({ entryPoints: [new URL("../static/render.tsx", import.meta.url).pathname], bundle: true, platform: "node", format: "cjs", jsx: "automatic", define: { __KUBHEXA_STATIC_CONFIG__: JSON.stringify({ basePath: "/Kubhexa-Digital/", siteUrl: "https://studio-test.github.io/Kubhexa-Digital/", enquiryEndpoint: "https://project-test.supabase.co/functions/v1/kubhexa-enquiries" }) }, external: ["react", "react-dom", "lucide-react", "zod"], logLevel: "silent", outfile: new URL("template-render.cjs", runtime).pathname });
 const { pageDefinitions, renderPage } = require(new URL("template-render.cjs", runtime).pathname);
 
+test("marketing routes prerender unique metadata and one H1, while demos and privacy remain excluded", () => {
+  assert.equal(pageDefinitions.filter(p=>p.indexable).length,28);
+  assert.equal(new Set(pageDefinitions.map(p=>p.title)).size,pageDefinitions.length);
+  for(const p of pageDefinitions){
+    assert.equal(p.indexable, !["demo","privacy"].includes(p.kind));
+    assert.ok(p.title.length<=60); assert.ok(p.description.length<=155);
+    const html=renderPage(p.kind,p.templateId,p.landingPath);
+    assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p.path);
+    if(p.indexable)assert.ok(html.includes('href="/Kubhexa-Digital/'),p.path);
+  }
+});
+
 test("the six templates cover every package and business family with safe unique routes", () => {
   assert.equal(templateCatalog.length, 6);
   assert.equal(new Set(templateIds).size, 6);
@@ -26,8 +38,8 @@ test("the six templates cover every package and business family with safe unique
     assert.equal(templatePath(template.id, true), `/templates/${template.id}/preview/`);
   }
   assert.throws(() => templatePath("../private"), /Unknown/);
-  assert.equal(pageDefinitions.length, 15);
-  assert.equal(new Set(pageDefinitions.map(page => page.path)).size, 15);
+  assert.equal(pageDefinitions.length, 35);
+  assert.equal(new Set(pageDefinitions.map(page => page.path)).size, 35);
 });
 
 test("catalogue filters support package links and an honest empty result", () => {

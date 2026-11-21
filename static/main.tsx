@@ -8,6 +8,7 @@ import "../app/packages.css";
 import "../app/templates.css";
 import "../app/template-demos.css";
 import "../app/cobalt.css";
+import "../app/seo.css";
 import Home from "../app/page";
 import Privacy from "../app/privacy/page";
 import { MotionProvider } from "../app/components/MotionSystem";
@@ -25,6 +26,7 @@ async function hydratePage() {
     if(page === "demo") { const { default: Demo } = await import("../app/templates/TemplateDemo"); content = <Demo template={template}/>; }
     else { const { TemplateShowcase } = await import("../app/templates/TemplatePages"); content = <TemplateShowcase template={template}/>; }
   } else if(page === "templates") { const { TemplateCatalogue } = await import("../app/templates/TemplatePages"); content = <TemplateCatalogue/>; }
+  else if(page === "landing") { const { SeoLanding } = await import("../app/SeoLanding"); content = <SeoLanding path={root.dataset.landing!}/>; }
   else content = page === "privacy" ? <Privacy/> : <Home/>;
   hydrateRoot(root, <MotionProvider>{content}</MotionProvider>);
 }

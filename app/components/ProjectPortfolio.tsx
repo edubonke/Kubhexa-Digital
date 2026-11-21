@@ -35,7 +35,7 @@ export function ProjectPortfolio() {
         </button>
         <div className="portfolio-project-copy"><div className="portfolio-project-meta"><span>0{index + 1} / {item.category}</span><span>{item.status}</span></div>
         <h3>{item.name}</h3><p>{item.introduction}</p>
-        <button type="button" className="text-link" aria-haspopup="dialog" onClick={event => { openerRef.current = event.currentTarget; setActive(item.id); }}>Explore {item.name} <ArrowRight size={17} /></button></div>
+        <button type="button" className="text-link" aria-haspopup="dialog" onClick={event => { openerRef.current = event.currentTarget; setActive(item.id); }}>Explore {item.name} <ArrowRight size={17} /></button><p><a className="text-link" href={sitePath(`/work/${item.id==="alphasonic"?"alphasonic-international":item.id}/`)}>Read {item.name} case study <ArrowRight size={16}/></a></p></div>
       </article>)}
     </div>
     <dialog ref={dialogRef} className={`case-modal portfolio-modal ${expanded ? "is-expanded" : ""}`} aria-labelledby="portfolio-preview-title" onCancel={event => { event.preventDefault(); close(); }} onClick={event => { if (event.target === event.currentTarget) close(); }}>

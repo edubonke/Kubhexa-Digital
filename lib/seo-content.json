@@ -1,0 +1,957 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "kind": "Home",
+      "title": "Small Business Website Design SA | Kubhexa Digital",
+      "desc": "Get a professional small-business website from R2,990. Explore website packages, interactive templates and custom app development with Kubhexa Digital.",
+      "h1": "Website Design and App Development for South African Businesses",
+      "links": [
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Small business website design",
+          "/services/website-design/"
+        ],
+        [
+          "Custom app development",
+          "/services/app-development/"
+        ],
+        [
+          "UI/UX design",
+          "/services/ux-design/"
+        ],
+        [
+          "Explore interactive website templates",
+          "/templates/"
+        ],
+        [
+          "Website and app portfolio",
+          "/work/"
+        ],
+        [
+          "About Kubhexa Digital",
+          "/about/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ],
+        [
+          "Website planning guides",
+          "/resources/"
+        ],
+        [
+          "Privacy notice",
+          "/privacy/"
+        ]
+      ]
+    },
+    {
+      "path": "/packages/",
+      "kind": "Pricing",
+      "title": "Website Design Prices South Africa | From R2,990",
+      "desc": "Compare five South African website packages from R2,990. View inclusions, delivery requirements, optional maintenance and build your website estimate.",
+      "h1": "Affordable Website Design Packages in South Africa",
+      "links": [
+        [
+          "Website template for local trades",
+          "/templates/neighbour/"
+        ],
+        [
+          "Professional services website template",
+          "/templates/northline/"
+        ],
+        [
+          "Photography and portfolio website template",
+          "/templates/fieldform/"
+        ],
+        [
+          "Restaurant website design",
+          "/templates/table-thyme/"
+        ],
+        [
+          "Salon and appointment-booking websites",
+          "/templates/luma/"
+        ],
+        [
+          "Preview an e-commerce website",
+          "/templates/morrow/"
+        ],
+        [
+          "Website cost guide",
+          "/resources/website-cost-south-africa/"
+        ],
+        [
+          "Website maintenance and hosting",
+          "/#website-care"
+        ],
+        [
+          "Request a website estimate",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/services/website-design/",
+      "kind": "Service",
+      "title": "Small Business Website Design SA | Kubhexa",
+      "desc": "Professional websites for South African small businesses. Compare packages from R2,990, explore templates and request a quote.",
+      "h1": "Website Design for Small Businesses",
+      "links": [
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Construction website development",
+          "/work/alphasonic-international/"
+        ],
+        [
+          "Interactive website templates",
+          "/templates/"
+        ],
+        [
+          "E-commerce website design",
+          "/services/ecommerce/"
+        ],
+        [
+          "Online appointment booking",
+          "/services/booking-websites/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/services/app-development/",
+      "kind": "Service",
+      "title": "Custom App Development South Africa | Kubhexa",
+      "desc": "Explore custom app and business system development for South African businesses, from digital product concepts to practical platforms.",
+      "h1": "Custom App and Business System Development",
+      "links": [
+        [
+          "Education software design",
+          "/work/edubonke/"
+        ],
+        [
+          "IT support platforms",
+          "/work/shiftstart/"
+        ],
+        [
+          "Service marketplace design",
+          "/work/auntie-uncle/"
+        ],
+        [
+          "UI/UX and product design",
+          "/services/ux-design/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/services/ux-design/",
+      "kind": "Service",
+      "title": "UI/UX and Product Design SA | Kubhexa",
+      "desc": "Design clear, useful digital experiences for your business. Explore website interfaces, booking journeys and application prototypes.",
+      "h1": "UI/UX and Digital Product Design",
+      "links": [
+        [
+          "Custom app development",
+          "/services/app-development/"
+        ],
+        [
+          "Booking experience concept",
+          "/#concepts"
+        ],
+        [
+          "Marketplace application design",
+          "/work/auntie-uncle/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/services/ecommerce/",
+      "kind": "Service",
+      "title": "E-commerce Website Design South Africa | Kubhexa",
+      "desc": "Plan an online shop for your small business. Explore the Morrow template and Shop packages starting from R17,990.",
+      "h1": "E-commerce Website Development",
+      "links": [
+        [
+          "Preview Morrow",
+          "/templates/morrow/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Website design service",
+          "/services/website-design/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/services/booking-websites/",
+      "kind": "Service",
+      "title": "Booking Website Design South Africa | Kubhexa",
+      "desc": "Explore appointment-led websites for salons and service providers. Try Luma and compare Bookings packages starting from R11,990.",
+      "h1": "Websites with Online Appointment Booking",
+      "links": [
+        [
+          "Preview Luma",
+          "/templates/luma/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "UI/UX design",
+          "/services/ux-design/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/",
+      "kind": "Gallery",
+      "title": "Small Business Website Templates SA | Kubhexa",
+      "desc": "Explore six interactive website templates for South African small businesses: trades, professionals, salons, creatives, restaurants and shops.",
+      "h1": "Interactive Small Business Website Templates",
+      "links": [
+        [
+          "Neighbour website template",
+          "/templates/neighbour/"
+        ],
+        [
+          "Northline website template",
+          "/templates/northline/"
+        ],
+        [
+          "Luma website template",
+          "/templates/luma/"
+        ],
+        [
+          "Fieldform website template",
+          "/templates/fieldform/"
+        ],
+        [
+          "Table & Thyme website template",
+          "/templates/table-thyme/"
+        ],
+        [
+          "Morrow website template",
+          "/templates/morrow/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/neighbour/",
+      "kind": "Template sales",
+      "title": "Trades and Cleaning Website Template | Kubhexa",
+      "desc": "Preview a customisable website for cleaners, tradespeople and home-service businesses. The Start package begins at R2,990.",
+      "h1": "Website Template for Trades and Home Services",
+      "links": [
+        [
+          "Preview Neighbour",
+          "/templates/neighbour/preview/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Relevant website design service",
+          "/services/website-design/"
+        ],
+        [
+          "Explore all templates",
+          "/templates/"
+        ],
+        [
+          "Request a quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/northline/",
+      "kind": "Template sales",
+      "title": "Professional Services Website Template | Kubhexa",
+      "desc": "Explore a professional services website for consultants and small firms. The Business package starts from R5,990.",
+      "h1": "Website Template for Consultants and Service Firms",
+      "links": [
+        [
+          "Preview Northline",
+          "/templates/northline/preview/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Relevant website design service",
+          "/services/website-design/"
+        ],
+        [
+          "Explore all templates",
+          "/templates/"
+        ],
+        [
+          "Request a quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/luma/",
+      "kind": "Template sales",
+      "title": "Salon and Booking Website Template | Kubhexa",
+      "desc": "Try a salon and wellness website with a sample booking journey. The Kubhexa Bookings package starts from R11,990.",
+      "h1": "Salon Website Template with Online Booking",
+      "links": [
+        [
+          "Preview Luma",
+          "/templates/luma/preview/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Relevant website design service",
+          "/services/booking-websites/"
+        ],
+        [
+          "Explore all templates",
+          "/templates/"
+        ],
+        [
+          "Request a quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/fieldform/",
+      "kind": "Template sales",
+      "title": "Photography and Portfolio Website Template | Kubhexa",
+      "desc": "Showcase photography, studio or creative work with an interactive portfolio website. Showcase packages start from R8,990.",
+      "h1": "Website Template for Photographers and Creatives",
+      "links": [
+        [
+          "Preview Fieldform",
+          "/templates/fieldform/preview/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Relevant website design service",
+          "/services/website-design/"
+        ],
+        [
+          "Explore all templates",
+          "/templates/"
+        ],
+        [
+          "Request a quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/table-thyme/",
+      "kind": "Template sales",
+      "title": "Restaurant and Catering Website Template | Kubhexa",
+      "desc": "Explore a restaurant and catering website with a sample menu and enquiry journey. Showcase packages start from R8,990.",
+      "h1": "Website Template for Restaurants and Caterers",
+      "links": [
+        [
+          "Preview Table & Thyme",
+          "/templates/table-thyme/preview/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Relevant website design service",
+          "/services/website-design/"
+        ],
+        [
+          "Explore all templates",
+          "/templates/"
+        ],
+        [
+          "Request a quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/templates/morrow/",
+      "kind": "Template sales",
+      "title": "Small Business E-commerce Website Template | Kubhexa",
+      "desc": "Try an online store template with product browsing, cart and simulated checkout. Shop packages start from R17,990.",
+      "h1": "Online Store Website Template",
+      "links": [
+        [
+          "Preview Morrow",
+          "/templates/morrow/preview/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Relevant website design service",
+          "/services/ecommerce/"
+        ],
+        [
+          "Explore all templates",
+          "/templates/"
+        ],
+        [
+          "Request a quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/work/",
+      "kind": "Work hub",
+      "title": "Website and App Development Portfolio | Kubhexa Digital",
+      "desc": "Explore website and app projects including construction, education software, IT support and service marketplace prototypes.",
+      "h1": "Website and App Development Portfolio",
+      "links": [
+        [
+          "EduBonke education software",
+          "/work/edubonke/"
+        ],
+        [
+          "ShiftStart IT support platform",
+          "/work/shiftstart/"
+        ],
+        [
+          "Alphasonic construction website",
+          "/work/alphasonic-international/"
+        ],
+        [
+          "Auntie & Uncle marketplace",
+          "/work/auntie-uncle/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/work/edubonke/",
+      "kind": "Case study",
+      "title": "EduBonke Education Software Case Study | Kubhexa",
+      "desc": "Explore the EduBonke education software prototype and its college management design. See the project approach and sample experience.",
+      "h1": "EduBonke Education Software Design",
+      "links": [
+        [
+          "Explore live project",
+          "https://edubonke.github.io/EduBonke/"
+        ],
+        [
+          "Education software development",
+          "/services/app-development/"
+        ],
+        [
+          "All case studies",
+          "/work/"
+        ],
+        [
+          "Discuss a similar project",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/work/shiftstart/",
+      "kind": "Case study",
+      "title": "ShiftStart IT Support Platform Case Study | Kubhexa",
+      "desc": "Explore ShiftStart, an IT support platform project with troubleshooting journeys and knowledge-base interface design.",
+      "h1": "ShiftStart IT Support Platform Design",
+      "links": [
+        [
+          "Explore live project",
+          "https://edubonke.github.io/Shift-Start/"
+        ],
+        [
+          "Custom business systems",
+          "/services/app-development/"
+        ],
+        [
+          "All case studies",
+          "/work/"
+        ],
+        [
+          "Discuss a similar project",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/work/alphasonic-international/",
+      "kind": "Case study",
+      "title": "Construction Website Design Case Study | Kubhexa",
+      "desc": "Explore the Alphasonic International construction and renovation website, including the project showcase and site assessment enquiry journey.",
+      "h1": "Alphasonic International Construction Website",
+      "links": [
+        [
+          "Explore live project",
+          "https://edubonke.github.io/Alphasonic-International/"
+        ],
+        [
+          "Construction website development",
+          "/services/website-design/"
+        ],
+        [
+          "All case studies",
+          "/work/"
+        ],
+        [
+          "Discuss a similar project",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/work/auntie-uncle/",
+      "kind": "Case study",
+      "title": "Service Marketplace App Case Study | Kubhexa",
+      "desc": "Explore the Auntie & Uncle service marketplace prototype and its household-services booking journey. See the demonstrated experience.",
+      "h1": "Auntie & Uncle Service Marketplace App Design",
+      "links": [
+        [
+          "Explore live project",
+          "https://edubonke.github.io/Auntie-Uncle-V2/"
+        ],
+        [
+          "Marketplace development",
+          "/services/app-development/"
+        ],
+        [
+          "All case studies",
+          "/work/"
+        ],
+        [
+          "Discuss a similar project",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/about/",
+      "kind": "About",
+      "title": "About Kubhexa Digital | Phumlane Kubheka",
+      "desc": "Meet Kubhexa Digital and founder Phumlane Kubheka. Learn about the agency’s approach to websites, applications and digital product design.",
+      "h1": "About Kubhexa Digital",
+      "links": [
+        [
+          "Website and app portfolio",
+          "/work/"
+        ],
+        [
+          "Website design services",
+          "/services/website-design/"
+        ],
+        [
+          "Get in touch",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/contact/",
+      "kind": "Contact",
+      "title": "Request a Website or App Quote | Kubhexa Digital",
+      "desc": "Tell Kubhexa Digital about your website, application or digital design project. Request an estimate based on your business needs and scope.",
+      "h1": "Request a Website or App Development Quote",
+      "links": [
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Privacy notice",
+          "/privacy/"
+        ],
+        [
+          "About Kubhexa Digital",
+          "/about/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/",
+      "kind": "Resource hub",
+      "title": "Small Business Website Guides | Kubhexa Digital",
+      "desc": "Practical guides for South African small businesses on website pricing, planning, templates and online customer enquiries.",
+      "h1": "Small Business Website Resources",
+      "links": [
+        [
+          "How Much Does a Website Cost in South Africa?",
+          "/resources/website-cost-south-africa/"
+        ],
+        [
+          "What Is Included in a R2,990 Small Business Website?",
+          "/resources/what-included-r2990-website/"
+        ],
+        [
+          "How to Choose the Right Website Package for Your Business",
+          "/resources/choose-website-package/"
+        ],
+        [
+          "10 Things Every Small Business Website Needs",
+          "/resources/small-business-website-checklist/"
+        ],
+        [
+          "How to Build a Website That Generates Customer Enquiries",
+          "/resources/website-generates-enquiries/"
+        ],
+        [
+          "Website Templates vs Custom Websites: Which Should You Choose?",
+          "/resources/website-templates-vs-custom/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ]
+      ]
+    },
+    {
+      "path": "/privacy/",
+      "kind": "Privacy — noindex,follow",
+      "title": "Privacy | Kubhexa Digital",
+      "desc": "How Kubhexa Digital uses project enquiry information.",
+      "h1": "Privacy Notice",
+      "links": [
+        [
+          "Contact Kubhexa Digital",
+          "/contact/"
+        ],
+        [
+          "Return to homepage",
+          "/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/website-cost-south-africa/",
+      "kind": "Article",
+      "title": "Website Costs in South Africa | Kubhexa Digital",
+      "desc": "Compare Kubhexa Digital website starting prices from R2,990 and learn what affects your total website budget, hosting and ongoing costs.",
+      "h1": "How Much Does a Website Cost in South Africa?",
+      "links": [
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Explore website templates",
+          "/templates/"
+        ],
+        [
+          "Website hosting and maintenance",
+          "/#website-care"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/what-included-r2990-website/",
+      "kind": "Article",
+      "title": "What Is Included in a R2,990 Website? | Kubhexa",
+      "desc": "Understand the Kubhexa Start package, who a one-page website suits, what to prepare and which additional costs to confirm before requesting a quote.",
+      "h1": "What Is Included in a R2,990 Small Business Website?",
+      "links": [
+        [
+          "Start website package",
+          "/packages/#start"
+        ],
+        [
+          "Preview Neighbour",
+          "/templates/neighbour/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/choose-website-package/",
+      "kind": "Article",
+      "title": "Choose the Right Website Package | Kubhexa Digital",
+      "desc": "Choose a website package based on your business goals. Compare Start, Business, Showcase, Bookings and Shop, with examples and starting prices.",
+      "h1": "How to Choose the Right Website Package for Your Business",
+      "links": [
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Interactive website templates",
+          "/templates/"
+        ],
+        [
+          "Request an estimate",
+          "/contact/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/small-business-website-checklist/",
+      "kind": "Article",
+      "title": "10 Small Business Website Essentials | Kubhexa",
+      "desc": "Use this practical checklist of ten website essentials for South African small businesses, from service details and pricing to enquiries and mobile design.",
+      "h1": "10 Things Every Small Business Website Needs",
+      "links": [
+        [
+          "Small business website design",
+          "/services/website-design/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Website readiness checklist",
+          "/resources/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/website-generates-enquiries/",
+      "kind": "Article",
+      "title": "Build a Website That Generates Enquiries | Kubhexa",
+      "desc": "Learn how clear offers, mobile-friendly design, enquiry forms and trustworthy content can help a small-business website attract qualified enquiries.",
+      "h1": "How to Build a Website That Generates Customer Enquiries",
+      "links": [
+        [
+          "Business website package",
+          "/packages/#business"
+        ],
+        [
+          "Construction website case study",
+          "/work/alphasonic-international/"
+        ],
+        [
+          "Website design services",
+          "/services/website-design/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    },
+    {
+      "path": "/resources/website-templates-vs-custom/",
+      "kind": "Article",
+      "title": "Website Templates vs Custom Websites | Kubhexa",
+      "desc": "Compare website templates with custom development. Explore trade-offs in cost, scope, design flexibility and how to choose a suitable approach.",
+      "h1": "Website Templates vs Custom Websites: Which Should You Choose?",
+      "links": [
+        [
+          "Explore interactive website templates",
+          "/templates/"
+        ],
+        [
+          "Compare website packages",
+          "/packages/"
+        ],
+        [
+          "Custom app development",
+          "/services/app-development/"
+        ],
+        [
+          "Request a project quote",
+          "/contact/"
+        ]
+      ]
+    }
+  ],
+  "articles": {
+    "website-cost-south-africa": {
+      "answer": "A small-business website from Kubhexa Digital starts at R2,990 for a one-page site. Business websites start at R5,990, Showcase at R8,990, Bookings at R11,990 and Shop at R17,990. Your total depends on scope, hosting, domain registration and any external subscriptions. Request an estimate for your project.",
+      "faqs": [
+        [
+          "What is the cheapest Kubhexa package?",
+          "Start begins at R2,990 for a one-page website."
+        ],
+        [
+          "Are hosting and domains included?",
+          "These can cost extra; confirm them in your quote."
+        ],
+        [
+          "Is VAT included?",
+          "VAT is added only if applicable; confirm the final quote."
+        ],
+        [
+          "What determines the final price?",
+          "Scope, selected extras and any external services affect the final amount."
+        ],
+        [
+          "Can I compare designs first?",
+          "Yes, explore the six interactive templates before requesting an estimate."
+        ]
+      ]
+    },
+    "what-included-r2990-website": {
+      "answer": "Kubhexa Digital’s Start package begins at R2,990 for a customised one-page website. It is designed as a starting point for small businesses that need a clear online presence. Explore the Neighbour template, prepare your business information and request a quotation to confirm inclusions, scope and additional costs.",
+      "faqs": [
+        [
+          "Is R2,990 the final price?",
+          "It is the starting price; final scope and extras are confirmed in the quote."
+        ],
+        [
+          "Who is Start for?",
+          "It is intended for sole traders, freelancers and home businesses needing a one-page site."
+        ],
+        [
+          "Can I see a sample?",
+          "Yes, Neighbour is an interactive fictional-business template."
+        ],
+        [
+          "Can I add extra pages?",
+          "Additional pages may change scope; request an estimate for a multi-page option."
+        ]
+      ]
+    },
+    "choose-website-package": {
+      "answer": "Choose a website package based on what customers need to do. Start suits a simple online presence, Business suits service businesses needing multiple pages, Showcase suits portfolios and menus, Bookings suits appointment-led businesses, and Shop suits online retailers. Compare starting prices, requirements and templates before requesting a quote.",
+      "faqs": [
+        [
+          "What package suits a sole trader?",
+          "Start may suit a simple one-page presence."
+        ],
+        [
+          "What package suits a salon?",
+          "Bookings is designed for appointment-led businesses and starts at R11,990."
+        ],
+        [
+          "Which package supports an online shop?",
+          "Shop starts at R17,990 for small-business e-commerce."
+        ],
+        [
+          "Can I compare interactive layouts?",
+          "Yes, use the six template presentation pages."
+        ],
+        [
+          "Can scope change?",
+          "Yes; confirm final inclusions and extra costs before approval."
+        ]
+      ]
+    },
+    "small-business-website-checklist": {
+      "answer": "A small-business website needs clear service information, your business identity, a useful contact method, mobile-friendly pages, accessible navigation, trustworthy content, accurate pricing or quotation guidance, search-friendly metadata, secure HTTPS and a plan for updates. Start with the features that help customers understand your offer and take the next step.",
+      "faqs": [
+        [
+          "Do I need a large website?",
+          "Not necessarily; a one-page site may suit a simple offer."
+        ],
+        [
+          "What should customers see first?",
+          "A clear description of what you do and the next action."
+        ],
+        [
+          "Should I list prices?",
+          "Use accurate prices or explain how quotes are calculated."
+        ],
+        [
+          "Do I need a mobile website?",
+          "A responsive website should work on phones, tablets and desktops."
+        ]
+      ]
+    },
+    "website-generates-enquiries": {
+      "answer": "A website can support customer enquiries when visitors immediately understand your offer, see relevant examples and have a clear way to contact you. Keep pages responsive, use concise service descriptions, work examples and a simple enquiry form. Measure completed enquiries rather than clicks alone, and improve the journey using real data.",
+      "faqs": [
+        [
+          "Will a website guarantee enquiries?",
+          "No; results depend on demand, visibility, offer and usability."
+        ],
+        [
+          "Is a contact form enough?",
+          "A clear enquiry journey is important; a verified email or WhatsApp may help if offered."
+        ],
+        [
+          "How do I measure enquiries?",
+          "Track a successful submission and reconcile it with the enquiry register."
+        ],
+        [
+          "Should I add case studies?",
+          "Yes, if they are factual and any necessary permission is obtained."
+        ]
+      ]
+    },
+    "website-templates-vs-custom": {
+      "answer": "A template is a useful starting point when your business needs a familiar website structure within a defined scope. Custom development is better suited to distinctive workflows or requirements that do not fit a template. Kubhexa offers six interactive templates and custom app development; compare the actual needs before requesting a quote.",
+      "faqs": [
+        [
+          "Can templates be customised?",
+          "Kubhexa offers customisable website templates; agree the specific changes in your quote."
+        ],
+        [
+          "Are the demo businesses real?",
+          "No, the previews represent fictional sample experiences."
+        ],
+        [
+          "When is custom development useful?",
+          "When requirements involve unique functions, workflows or integrations."
+        ],
+        [
+          "Can I try a template first?",
+          "Yes, the gallery contains six interactive template previews."
+        ]
+      ]
+    }
+  }
+}
